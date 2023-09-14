@@ -4,11 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0>`_, and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
-## [0.8.3] = 2023-09-13
+## [0.8.4] - 2023-09-13
 
 ### Fixed
 
-- Fixed all functions -- at this time, *all* functions should be functioning correctly package-wide
+- Corrected minor formatting discrepancies in CHANGELOG
+- Log messages now instantiate at (somewhat) more appropriate times
+
+## [0.8.3] - 2023-09-13
+
+### Fixed
+
+- Fixed all functions -- at this time, _all_ functions should be functioning correctly package-wide
 - Renamed .env.txt to .env to ensure it gets sourced correctly (it wasn't previously)
 
 ### Added
@@ -19,7 +26,7 @@ The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0>`_
 
 - main.py
 
-## [0.8.2] = 2023-09-13
+## [0.8.2] - 2023-09-13
 
 ### Changed
 
@@ -29,7 +36,7 @@ The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0>`_
 
 - (Hopefully) fixed import statments and .env variables to ensure we can run via main function
 
-## [0.8.1] = 2023-09-13
+## [0.8.1] - 2023-09-13
 
 ### Fixed
 
@@ -39,7 +46,7 @@ The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0>`_
 
 - getsysinfo now sources .env
 
-## [0.8.0] = 2023-09-13
+## [0.8.0] - 2023-09-13
 
 ### Changed
 
