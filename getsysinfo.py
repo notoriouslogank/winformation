@@ -1,8 +1,12 @@
 import subprocess
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+WINFORMATION = os.getenv('WINFORMATION')
 
 raw_info = subprocess.check_output(['systeminfo']).decode('utf-8').split('\n')
 info_dump = []
-
 
 def get_sysinfo():
     """Get system information and write it to a file
@@ -25,7 +29,7 @@ def write_outfile(line):
     """
     # TODO: Send this outfile to the root dir
     # TODO: Or, maybe make it write to a tmp file here then format it later?
-    with open('WINFORMATION.txt', 'a') as output:
+    with open(WINFORMATION, 'a') as output:
         output.write(line)
         output.write('\r')
 
