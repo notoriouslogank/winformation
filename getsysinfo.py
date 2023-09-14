@@ -1,9 +1,13 @@
 import subprocess
 from dotenv import load_dotenv
+import logging
 import os
 
+logging.basicConfig(filename='winfo.log', filemode='w', level=logging.DEBUG)
+
 load_dotenv()
-WINFORMATION = os.getenv('WINFORMATION')
+WINFO = os.getenv('WINFORMATION')
+logging.debug(f'WINFO = {WINFO}')
 
 raw_info = subprocess.check_output(['systeminfo']).decode('utf-8').split('\n')
 info_dump = []
@@ -14,9 +18,10 @@ def get_sysinfo():
     for item in raw_info:
         info_dump.append(str(item.split('\r')[:-1]))
     for entry in info_dump:
+        logging.debug('Sanitizing entry...')
         entry = clean_entry(entry)
         write_outfile(entry)
-        
+    
 def clean_entry(entry):
     """Sanitize each line of the output before writing
     """
@@ -29,9 +34,11 @@ def write_outfile(line):
     """
     # TODO: Send this outfile to the root dir
     # TODO: Or, maybe make it write to a tmp file here then format it later?
-    with open(WINFORMATION, 'a') as output:
+    logging.debug('Writing outfile...')
+    with open(WINFO, 'a') as output:
         output.write(line)
         output.write('\r')
+    logging.debug('Done.')
 
 if __name__=="__main__":
     get_sysinfo()
