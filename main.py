@@ -1,16 +1,12 @@
-import emailer
-import getsysinfo
+import emailer as e
+import os
+from dotenv import load_dotenv
+import getsysinfo as gi
 
-WINFORMATION = 'WINFORMATION.txt'
-getsysinfo.get_sysinfo()
-emailer.cast_file_to_message(WINFORMATION)
-emailer.send_mail()
-#import logging
+load_dotenv()
+WINFORMATION = os.getenv('WINFORMATION')
 
-#logging.basicConfig()
-""" def main():
-    getsysinfo.get_sysinfo()
-    emailer.cast_file_to_message()
-    emailer.send_mail()
-
-main() """
+if __name__ == "__main__":
+    gi.get_sysinfo()
+    e.email.set_content(e.cast_file_to_message(WINFORMATION))
+    e.send_mail()
