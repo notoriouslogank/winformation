@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0>`_, and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
+## [0.8.3] = 2023-09-13
+
+### Fixed
+
+- Fixed all functions -- at this time, *all* functions should be functioning correctly package-wide
+- Renamed .env.txt to .env to ensure it gets sourced correctly (it wasn't previously)
+
+### Added
+
+- Implemented debug logging throughout package
+
+### Deprecated
+
+- main.py
 
 ## [0.8.2] = 2023-09-13
 
