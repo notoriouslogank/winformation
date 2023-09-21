@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0>`_, and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
+## [Unreleased] - 2023-09-21
+
+### Added
+
+- Functionality to make application platform-agnostic
+
 ## [0.8.4] - 2023-09-13
 
 ### Fixed
