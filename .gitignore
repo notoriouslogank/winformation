@@ -1,5 +1,6 @@
 .venv
 .vscode
 WINFORMATION.txt
+winfo.log
 .env
 __pycache__/
