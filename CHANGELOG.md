@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0>`_, and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
+## [1.2.0] - 2023-09-21
+
+## Fixed
+
+- Removed unused imports from winfo.py
+
 ## [1.1.0] - 2023-09-21
 
 ## Fixed
