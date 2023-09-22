@@ -5,3 +5,4 @@ WINFORMATION.txt
 winfo.log
 .env
 __pycache__/
+.markdownlint.json
