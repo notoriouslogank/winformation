@@ -1,19 +1,14 @@
 import subprocess
-from dotenv import load_dotenv
 import logging
 import sys
 import platform
 
 PLATFORM = sys.platform
-WINFO = 'SYS_INFO.txt'
+SYS_INFO = 'SYS_INFO.txt'
 
-try:
-    load_dotenv('.env')
-except FileNotFoundError:
-    logging.error('.env file not found!')
     
 logging.basicConfig(filename='winfo.log', filemode='w', level=logging.DEBUG)
-logging.debug(f'WINFO = {WINFO}')
+logging.debug(f'WINFO = {SYS_INFO}')
 
 def isPlatformSupported():
     """Verify current platform is supported.
@@ -128,7 +123,7 @@ def writeOutfile(line):
     # TODO: Send this outfile to the root dir
     # TODO: Or, maybe make it write to a tmp file here then format it later?
     logging.debug('Writing outfile...')
-    with open(WINFO, 'a') as output:
+    with open(SYS_INFO, 'a') as output:
         output.write(line)
         output.write('\r')
     logging.debug('Done.')
