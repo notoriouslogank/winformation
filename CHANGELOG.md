@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0>`_, and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
+## [1.0.0] - 2023-09-21
+
+## Added
+
+- New import to emailer.py (codecs)
+
+## Changed
+
+- emailer.py no longer sources from .env
+- emailer now uses base64 encoding/decoding to obfuscate login credentials
+
+## Removed
+
+- Dependancy on .env to make sharing easier
+
 ## [0.9.1] - 2023-09-21
 
 ## Removed
