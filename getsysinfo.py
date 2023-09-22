@@ -7,7 +7,7 @@ PLATFORM = sys.platform
 SYS_INFO = "SYS_INFO.txt"
 
 
-logging.basicConfig(filename="winfo.log", filemode="w", level=logging.DEBUG)
+logging.basicConfig(filename="winfo.log", filemode="w", level=logging.ERROR)
 logging.debug(f"Outfile = {SYS_INFO}")
 
 

