@@ -39,5 +39,5 @@ def send_mail():
 
 
 if __name__=="__main__":
-    email.set_content(cast_file_to_message(WINFO))
+    email.set_content(cast_file_to_message('WINFO'))
     send_mail()

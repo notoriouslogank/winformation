@@ -35,7 +35,7 @@ def write_outfile(line):
     # TODO: Send this outfile to the root dir
     # TODO: Or, maybe make it write to a tmp file here then format it later?
     logging.debug('Writing outfile...')
-    with open(WINFO, 'a') as output:
+    with open('WINFO', 'a') as output:
         output.write(line)
         output.write('\r')
     logging.debug('Done.')
